@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects</title>
+    <link rel="stylesheet" href="pstyles.css"> <!-- Link to your CSS file -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.0/ScrollTrigger.min.js"></script>
+    
+    <style>
+        .extra-text {
+            display: none; /* Hide additional text by default */
+        }
+        .read-more {
+            color: var(--main-color);
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 1rem;
+            display: inline-block; /* Keep it inline with the text */
+        }
+        .view-project {
+            display: block; /* Ensure the button is on a new line */
+            margin-top: 1.5rem; /* Space above the button */
+            padding: 1rem 2rem; /* Add some padding for better aesthetics */
+            text-align: center; /* Center align the button text */
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="index.html" class="logo"><i class='bx bxs-leaf'></i>msh</a>
+        <i class='bx bx-menu' id="menu-icon" onclick="toggleMenu()"></i>
+        <div class="navbar">
+            <a href="index.html">Home</a>
+            <a href="about.html">about</a>
+            <a href="project.html">projects</a>
+            <a href="skills.html">skills</a>
+            <a href="education.html">Education</a>
+            <a href="contact.html">contact </a>
+        </div>
+    </div>
+ 
+    <div class="menu-overlay" id="menu-overlay">
+        <div class="navbar-mobile">
+            <a href="index.html" onclick="toggleMenu()">Home</a>
+            <a href="about.html" onclick="toggleMenu()">About</a>
+            <a href="project.html" onclick="toggleMenu()">Projects</a>
+            <a href="skills.html" onclick="toggleMenu()">skills</a>
+            <a href="education.html" onclick="toggleMenu()">Education</a>
+            <a href="contact.html" onclick="toggleMenu()">Contact</a>      
+        </div>
+    </div>
+
+    <main>
+        <div class="header">
+            <a href="index.html" class="logo"><i class='bx bxs-leaf'></i>msh</a>
+            <i class='bx bx-menu' id="menu-icon" onclick="toggleMenu()"></i>
+            <div class="navbar">
+                <a href="index.html">home</a>
+                <a href="project.html">project</a>
+                <a href="contact.html">contact </a>
+                <a href="skills.html">skills</a>
+                <a href="education.html">Education</a>
+                <a href="about.html">about</a>
+            </div>
+        </div>
+     
+        <section id="projects" class="projects-section">
+            <h1 class="heading">My <span>Projects</span></h1>
+            <div class="project-grid">
+                <div class="project-card">
+                    <img src="./assets/Atlas.png" alt="ATLAS Project">
+                    <div class="project-card-content">
+                        <h3>Project 1: ATLAS</h3>
+                        <p> 
+                            <b>ATLAS</b> is a comprehensive web application designed to revolutionize the way placement officers and departments manage, analyze, and interpret crucial placement information. 
+                            <span class="extra-text">The platform offers a robust suite of tools to streamline the entire placement process, from data management to automated offer letter categorization, report generation, and statistical analysis. ATLAS simplifies the complex tasks of <i>categorizing and understanding placement letters</i>, providing placement officers with powerful tools to manage and visualize data.</span>
+                        </p>
+                        <span class="read-more" onclick="toggleReadMore(this)">Read More</span>
+                        <a href="https://github.com/MallikarjunHiremath018/ATLAS---Automate-Analyze-Achieve" class="view-project">View Project</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="./assets/Atm_using_c.jpg" alt="ATM Using C Project">
+                    <div class="project-card-content">
+                        <h3>Project 2: ATM Using C</h3>
+                        <p>Project is an ATM system simulation implemented in C. It allows users to perform various banking operations such as withdrawing money, depositing money, checking balances, and viewing mini statements.
+                            <span class="extra-text"> It also includes an admin module for managing users and setting ATM parameters.</span>
+                        </p>
+                        <span class="read-more" onclick="toggleReadMore(this)">Read More</span>
+                        <a href="https://github.com/MallikarjunHiremath018/ATM_Using_C" class="view-project" >View Project</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="./assets/hitme.jpeg" alt="HITME Project">
+                    <div class="project-card-content">
+                        <h3>Project 3: HITME</h3>
+                        <p>A brief description of your HITME project.
+                            <span class="extra-text"> <p>
+                                 A thrilling game where you aim, click, and conquer the cosmos! Challenge yourself in this cosmic adventure, hitting targets and avoiding misses. Simple, fun, and perfect for all gamers.
+                        <span class="read-more" onclick="toggleReadMore(this)">Read More</span>
+                        <a href="https://hitmegame.github.io/hitme/" class="view-project" >View Project</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="footer-container">
+                <div class="footer-info">
+                    <p>&copy; 2024 Mallikarjun. All rights reserved.</p>
+        </footer>
+        
+    </main>
+
+    <script>
+          function toggleMenu() {
+        const menuOverlay = document.getElementById('menu-overlay');
+        menuOverlay.classList.toggle('show');
+    }
+        function toggleReadMore(element) {
+            const extraText = element.previousElementSibling.querySelector('.extra-text');
+            if (extraText.style.display === 'none' || extraText.style.display === '') {
+                extraText.style.display = 'inline'; // Show the extra text
+                element.textContent = 'Read Less'; // Change the text to "Read Less"
+            } else {
+                extraText.style.display = 'none'; // Hide the extra text
+                element.textContent = 'Read More'; // Change the text back to "Read More"
+            }
+        }
+    document.addEventListener("DOMContentLoaded", function () {
+        gsap.from(".header", { opacity: 0, duration: 1, y: -50 });
+        gsap.from(".navbar a", { opacity: 0, duration: 1, y: -30, stagger: 0.2 });
+
+        gsap.from(".heading", { opacity: 0, duration: 1, y: -50 });
+        gsap.from(".project-grid", { opacity: 0, duration: 1, y: 100, stagger: 0.2 });
+    });
+    </script>
+</body>
+</html>
