@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.0/gsap.min.js"></script>
+</head>
+<body>
+    <div class="header">
+        <a href="index.html" class="logo"><i class='bx bxs-leaf'></i>msh</a>
+        <i class='bx bx-menu' id="menu-icon" onclick="toggleMenu()"></i>
+        <div class="navbar">
+            <a href="index.html">Home</a>
+            <a href="about.html">about</a>
+            <a href="project.html">projects</a>
+            <a href="skills.html">skills</a>
+            <a href="education.html">Education</a>
+            <a href="contact.html">contact </a>
+        </div>
+    </div>
+ 
+    <div class="menu-overlay" id="menu-overlay">
+        <div class="navbar-mobile">
+            <a href="index.html" onclick="toggleMenu()">Home</a>
+            <a href="about.html" onclick="toggleMenu()">About</a>
+            <a href="project.html" onclick="toggleMenu()">Projects</a>
+            <a href="skills.html" onclick="toggleMenu()">skills</a>
+            <a href="education.html" onclick="toggleMenu()">Education</a>
+            <a href="contact.html" onclick="toggleMenu()">Contact</a>      
+        </div>
+    </div>
+
+    <section class="about" id="about">
+        <h2 class="heading">About <span>Me</span></h2>
+        <div class="about-container">
+            <div class="image">
+                <img src="./assets/profile.jpeg"Profile Image">
+            </div>
+            <div class="about-content">
+                <h3>Frontend Developer</h3>
+                <p>Hi, I'm Mallikarjun, a passionate Full-Stack Developer dedicated to crafting intuitive and efficient web solutions.<br> With a strong command of both frontend and backend technologies, I thrive in creating applications that offer seamless user experiences.
+                Specialize in Node.js, Express.js, and MySQL for backend development, combined with HTML, CSS, and JavaScript to bring responsive interfaces to life.<br><br> I am genuinely humble and eager to learn new technologies that can enhance my skills and contribute to meaningful projects.
+                Driven by a love for learning, I continuously expand my skill set through hands-on coding, certifications, and staying updated with the latest tech trends.</p>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-info">
+                <p>&copy; 2024 Mallikarjun. All rights reserved.</p>
+    </footer>
+    
+    <script>
+          function toggleMenu() {
+        const menuOverlay = document.getElementById('menu-overlay');
+        menuOverlay.classList.toggle('show');
+    }
+        document.addEventListener("DOMContentLoaded", function () {
+            gsap.from(".header", { opacity: 0, duration: 1, y: -50 });
+            gsap.from(".navbar a", { opacity: 0, duration: 1, y: -30, stagger: 0.2 });
+           
+            gsap.from(".image", { opacity: 0, duration: 1, x: -50 });
+            gsap.from(".about-content", { opacity: 0, duration: 1, x: 50 });
+        });
+    </script>
+</body>
+</html>

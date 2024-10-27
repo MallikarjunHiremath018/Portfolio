@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.0/gsap.min.js"></script>
+    <style>
+        .menu-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+        }
+
+        .menu-overlay.show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="index.html" class="logo"><i class='bx bxs-leaf'></i>msh</a>
+        <i class='bx bx-menu' id="menu-icon" onclick="toggleMenu()"></i>
+        <div class="navbar">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="project.html">Projects</a>
+            <a href="skills.html">Skills</a>
+            <a href="education.html">Education</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </div>
+ 
+    <div class="menu-overlay" id="menu-overlay">
+        <div class="navbar-mobile">
+            <a href="index.html" onclick="toggleMenu()">Home</a>
+            <a href="about.html" onclick="toggleMenu()">About</a>
+            <a href="project.html" onclick="toggleMenu()">Projects</a>
+            <a href="skills.html" onclick="toggleMenu()">Skills</a>
+            <a href="education.html" onclick="toggleMenu()">Education</a>
+            <a href="contact.html" onclick="toggleMenu()">Contact</a>      
+        </div>
+    </div>
+
+    <section class="education" id="education">
+        <h2 class="heading">my <span>Journey</span></h2>
+        <div class="education-row">
+            <div class="education-column">
+                <h3 class="title">Education</h3>
+                <div class="education-box">
+                    <div class="education-content">
+                        <div class="content">
+                            <div class="year"><i class='bx bx-calendar-alt'></i> 2019-2022</div>
+                            <h3>Diploma - KHK Institute Of Engineering, Dharwad</h3>
+                            <p>Completed a Diploma in Computer Science and Engineering with an impressive 87.46%. Acquired hands-on experience with programming and system design, laying a strong technical foundation for your engineering degree.</p>
+                        </div>
+                    </div>
+                    <div class="education-content">
+                        <div class="content">
+                            <div class="year"><i class='bx bx-calendar-alt'></i> 2023-2025</div>
+                            <h3>BE - SDMCET, Dharwad</h3>
+                            <p>Pursuing a Bachelor’s Degree in Computer Science and Engineering with a CGPA of 8.68. Gained practical knowledge in software development, networking, and engineering fundamentals. Actively involved in tech projects and full-stack Development.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="education-column">
+                <h3 class="title">Experience</h3>
+                <div class="education-box">
+                    <div class="education-content">
+                        <div class="content">
+                            <div class="year"><i class='bx bxs-briefcase'></i> Work</div>
+                            <h3>Fresher</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-info">
+                <p>&copy; 2024 Mallikarjun. All rights reserved.</p>
+    </footer>
+    
+    <script>
+        function toggleMenu() {
+            console.log("Toggle menu called"); // For debugging
+            const menuOverlay = document.getElementById('menu-overlay');
+            menuOverlay.classList.toggle('show');
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            gsap.from(".header", { opacity: 0, duration: 1, y: -50 });
+            gsap.from(".navbar a", { opacity: 0, duration: 1, y: -30, stagger: 0.2 });
+            gsap.from(".education .heading", { opacity: 0, duration: 1, y: -50 });
+            gsap.from(".education-column", { opacity: 0, duration: 1, y: 50, stagger: 0.2 });
+        });
+    </script>
+</body>
+</html>
